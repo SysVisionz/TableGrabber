@@ -1,0 +1,38 @@
+{
+
+  "manifest_version": 2,
+  "name": "Table Grabber",
+  "version": "1.3",
+
+  "description": "grabs the values in a table row, stores them, and then places them into inputs specified by the user.",
+
+  "icons": {
+    "48": "icons/tableGrabber-48.png",
+    "96": "icons/tableGrabber-96.png"
+  },
+
+  "permissions":[
+    "activeTab",
+    "contextMenus"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["tableGrabber-content.js"]
+    }
+  ],
+
+  "background":
+  {
+    "scripts": ["tableGrabber-background.js"]
+  },
+
+  "browser_action": {
+    "default_icon": "icons/tableGrabber-48.png",
+    "default_title": "Table Grabber",
+    "default_popup": "popup/tableGrabber.html"
+  }
+
+}
